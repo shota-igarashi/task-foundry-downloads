@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>社内アプリ</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">INTERNAL APPS</p>
+      <h1>仕事に必要なアプリを、ここから。</h1>
+      <p>社内専用デスクトップアプリの最新版をダウンロードできます。</p>
+    </header>
+    <section id="apps" class="apps" aria-live="polite"></section>
+  </main>
+  <script>
+    fetch("apps.json").then((response) => response.json()).then(({ apps }) => {
+      document.querySelector("#apps").innerHTML = apps.map((app) => `
+        <article class="card">
+          <img src="${app.icon}" alt="" />
+          <div class="content">
+            <div class="title-row"><h2>${app.name}</h2><span>${app.status}</span></div>
+            <p>${app.description}</p>
+            <p class="meta">${app.platform} ・ v${app.version} ・ ${app.updatedAt}</p>
+            <a class="download${app.downloadUrl.startsWith("#") ? " disabled" : ""}" href="${app.downloadUrl}">Mac版をダウンロード</a>
+          </div>
+        </article>`).join("");
+    });
+  </script>
+</body>
+</html>
