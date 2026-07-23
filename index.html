@@ -16,7 +16,7 @@
     <section id="apps" class="apps" aria-live="polite"></section>
   </main>
   <script>
-    fetch("apps.json?v=1.0.2").then((response) => response.json()).then(({ apps }) => {
+    fetch("apps.json?v=1.0.3").then((response) => response.json()).then(({ apps }) => {
       document.querySelector("#apps").innerHTML = apps.map((app) => `
         <article class="card">
           <img src="${app.icon}" alt="" />
