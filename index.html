@@ -11,12 +11,12 @@
     <header>
       <p class="eyebrow">INTERNAL APPS</p>
       <h1>仕事に必要なアプリを、ここから。</h1>
-      <p>社内専用デスクトップアプリの最新版をダウンロードできます。</p>
+      <p>社内専用アプリの最新版とスマホ版を利用できます。</p>
     </header>
     <section id="apps" class="apps" aria-live="polite"></section>
   </main>
   <script>
-    fetch("apps.json?v=1.1.1").then((response) => response.json()).then(({ apps }) => {
+    fetch("apps.json?v=1.1.1-mobile").then((response) => response.json()).then(({ apps }) => {
       document.querySelector("#apps").innerHTML = apps.map((app) => `
         <article class="card">
           <img src="${app.icon}" alt="" />
@@ -24,7 +24,10 @@
             <div class="title-row"><h2>${app.name}</h2><span>${app.status}</span></div>
             <p>${app.description}</p>
             <p class="meta">${app.platform} ・ v${app.version} ・ ${app.updatedAt}</p>
-            <a class="download${app.downloadUrl.startsWith("#") ? " disabled" : ""}" href="${app.downloadUrl}">Mac版をダウンロード</a>
+            <div class="app-actions">
+              <a class="download${app.downloadUrl.startsWith("#") ? " disabled" : ""}" href="${app.downloadUrl}">Mac版をダウンロード</a>
+              ${app.mobileUrl ? `<a class="mobile-link" href="${app.mobileUrl}">スマホ版を開く</a>` : ""}
+            </div>
           </div>
         </article>`).join("");
     });

@@ -5,6 +5,7 @@
     "version": "1.1.1",
     "platform": "macOS",
     "downloadUrl": "https://task-foundry-sync.vercel.app/api/download",
+    "mobileUrl": "https://task-foundry-sync.vercel.app/",
     "icon": "task-foundry-256.png",
     "updatedAt": "2026-10-27",
     "status": "配布中"
