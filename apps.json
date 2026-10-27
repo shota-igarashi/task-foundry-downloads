@@ -2,7 +2,7 @@
   "apps": [{
     "name": "Task Foundry",
     "description": "タスク、予定、メモ、目標を一つにまとめる社内向けデスクトップアプリです。",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "platform": "macOS",
     "downloadUrl": "https://task-foundry-sync.vercel.app/api/download",
     "mobileUrl": "https://task-foundry-sync.vercel.app/",
