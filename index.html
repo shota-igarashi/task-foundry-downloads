@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>社内アプリ</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=install-guide" />
 </head>
 <body>
   <main>
@@ -28,6 +28,17 @@
               <a class="download${app.downloadUrl.startsWith("#") ? " disabled" : ""}" href="${app.downloadUrl}">Mac版をダウンロード</a>
               ${app.mobileUrl ? `<a class="mobile-link" href="${app.mobileUrl}">スマホ版を開く</a>` : ""}
             </div>
+            <aside class="install-notice">
+              <div class="install-notice-title"><span aria-hidden="true">!</span> Mac版を初めて開く方へ</div>
+              <p>「マルウェアが含まれていないことを確認できません」と表示されても、<strong>「ゴミ箱に入れる」は押さないでください。</strong></p>
+              <ol>
+                <li>画面の「完了」を押します</li>
+                <li>Macの「システム設定」→「プライバシーとセキュリティ」を開きます</li>
+                <li>下へスクロールし、Task Foundryの「このまま開く」を押します</li>
+                <li>確認画面でもう一度「開く」を押します</li>
+              </ol>
+              <p class="install-note-small">これは社内配布版のためにmacOSが表示する確認です。操作は初回のみ必要です。</p>
+            </aside>
           </div>
         </article>`).join("");
     });
